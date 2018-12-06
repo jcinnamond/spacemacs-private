@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: inspect
+# key: insp
+# --
+def inspect
+    $0
+end

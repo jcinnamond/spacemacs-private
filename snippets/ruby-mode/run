@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: run()
+# key: run
+# --
+run($1)${2:.with(${3:})} >

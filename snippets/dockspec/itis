@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: itis
+# --
+it { is_expected.to $0 }

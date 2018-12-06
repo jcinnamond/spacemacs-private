@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: stabby lambda with do/end
+# key: ->do
+# --
+-> ${1:args} do
+  $0
+end

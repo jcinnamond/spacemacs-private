@@ -1,0 +1,18 @@
+#+TITLE: dockspec layer
+
+# TOC links should be GitHub style anchors.
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+Run specs in docker
+
+* Key bindings
+
+| Key Binding | Description          |
+|-------------+----------------------|
+| ~SPC p t t~ | Run the current file |
+| ~SPC p t s~ | Run the current spec |
+| ~SPC p t a~ | Run all specs        |
+| ~SPC p t r~ | Rerun last spec      |

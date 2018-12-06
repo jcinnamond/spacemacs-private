@@ -1,0 +1,7 @@
+#name : cls
+#keyword: cls
+# --
+# ${2:Description}
+class ${1:Name}
+  $0
+end

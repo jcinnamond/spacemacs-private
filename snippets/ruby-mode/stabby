@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: stabby lambda
+# key: ->
+# --
+-> ${1:args} { $0 }

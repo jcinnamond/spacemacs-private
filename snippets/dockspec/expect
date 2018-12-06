@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: expect
+# --
+expect($1).to ${2:eq}($3)

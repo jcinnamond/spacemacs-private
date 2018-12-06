@@ -1,0 +1,5 @@
+#name : map
+#group : collections
+#key: map
+# --
+map { |${item}| $0 }

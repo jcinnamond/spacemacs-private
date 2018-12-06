@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : each
+#group : collections
+# --
+each do |${item}|
+  $0
+end

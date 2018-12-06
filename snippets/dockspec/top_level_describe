@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: describe
+# key: rdesc
+# --
+RSpec.describe ${1:subject} do
+  $0
+end

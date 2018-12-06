@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: store
+# key: store
+# --
+store_as(:$1) >
