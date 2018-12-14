@@ -162,6 +162,7 @@
    ;; Column marker
    `(column-marker-1 ((, class (:background ,highlight1))))
    `(column-marker-2 ((, class (:background ,highlight2))))
+   `(column-enforce-face ((,class (:background ,highlight1))))
    ))
 
 (provide-theme 'jc-theme)
