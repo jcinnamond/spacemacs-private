@@ -1,6 +1,6 @@
 ;; -*- eval: (rainbow-mode) -*-
 
-(deftheme jc-theme
+(deftheme jc
   "My custom theme")
 
 (let ((class '((class color) (min-colors 89)))
@@ -18,6 +18,13 @@
       (light3 "#8191A8")
       (light4 "#657A98")
 
+      (color0 "#081822")
+      (color1 "#244769")
+      (color2 "#b5d1f1")
+      (color3 "#dde4dd")
+      (color2 "#A4AFBF")
+      (color4 "#c1cc9c")
+
       ;; Highlight colors
       ;;; Blue
       (highlight0 "#13181E")
@@ -33,26 +40,27 @@
       (error1 "#7F393B"))
 
   (custom-theme-set-faces
-   'jc-theme
+   'jc
+
    `(bold ((,class (:weight bold))))
    `(bold-italic ((,class (:weight bold :slant italic))))
-   `(default ((,class (:foreground ,light0 :background ,dark0))))
+   `(default ((,class (:foreground ,color3 :background ,dark0))))
    `(error ((,class (:foreground ,error :weight bold))))
    `(italic ((,class (:slant italic))))
-   `(shadow ((,class (:foreground ,light0))))
+   `(shadow ((,class (:foreground ,color3))))
    `(underline ((,class (:underline t))))
    `(warning ((,class (:foreground ,warning))))
 
-   `(font-lock-comment-face ((,class (:foreground ,light3 :background ,dark0))))
-   `(font-lock-comment-delimiter-face ((,class (:foreground ,light3))))
-   `(font-lock-string-face ((,class (:foreground ,light0))))
+   `(font-lock-comment-face ((,class (:foreground ,color4 :background ,dark0))))
+   `(font-lock-comment-delimiter-face ((,class (:foreground ,color4))))
+   `(font-lock-string-face ((,class (:foreground ,color3))))
    `(font-lock-warning-face ((,class (:foreground ,warning))))
 
-   `(font-lock-builtin-face ((,class (:foreground ,light0))))
-   `(font-lock-constant-face ((,class (:foreground ,light0))))
-   `(font-lock-doc-face ((,class (:foreground ,light0))))
-   `(font-lock-function-name-face ((,class (:foreground ,light0))))
-   `(font-lock-keyword-face ((,class (:foreground ,light2 :weight normal))))
+   `(font-lock-builtin-face ((,class (:foreground ,color3))))
+   `(font-lock-constant-face ((,class (:foreground ,color3))))
+   `(font-lock-doc-face ((,class (:foreground ,color4))))
+   `(font-lock-function-name-face ((,class (:foreground ,color2 weight: normal))))
+   `(font-lock-keyword-face ((,class (:foreground ,color2))))
    `(font-lock-negation-char-face ((,class (:foreground ,light0))))
    `(font-lock-preprocessor-face ((,class (:foreground ,light0))))
    `(font-lock-reference-face ((,class (:foreground ,light0))))
@@ -112,14 +120,17 @@
    `(ivy-current-match ((,class (:background ,highlight2 :foreground ,light0))))
    `(ivy-minibuffer-match-face-2 ((,class (:foreground ,success))))
 
-   ;; > Modeline
+   ;; > Smartline
    `(mode-line-buffer-id ((,class (:foreground ,highlight4 :weight normal))))
    `(mode-line-highlight ((,class (:inherit highlight))))
+
+   `(powerline-active1 ((,class (:background ,highlight0 :foreground ,light0))))
+   `(powerline-active2 ((,class (:background ,highlight2 :foreground ,light0))))
    `(mode-line ((,class (:foreground ,light0 :background ,highlight2))))
+
+   `(powerline-inactive1 ((,class (:background ,highlight1 :foreground ,light2))))
+   `(powerline-inactive2 ((,class (:background ,highlight1 :foreground ,light2))))
    `(mode-line-inactive ((,class (:foreground ,light0 :background ,highlight0))))
-   `(jc-mode-line-state-insert-face ((,class (:foreground ,dark0 :background ,highlight4))))
-   `(jc-mode-line-state-replace-face ((,class (:foreground ,dark0 :background ,highlight4))))
-   `(jc-mode-line-state-visual-face ((,class (:background ,error))))
 
    ;; > Org mode
    `(org-level-1 ((,class (:foreground ,light1 :background ,highlight2))))
@@ -162,7 +173,24 @@
    ;; Column marker
    `(column-marker-1 ((, class (:background ,highlight1))))
    `(column-marker-2 ((, class (:background ,highlight2))))
-   `(column-enforce-face ((,class (:background ,highlight1))))
+
+   ;; Evil
+   `(evil-search-highlight-persist-highlight-face ((,class (:foreground ,highlight3 :background ,highlight1))))
+
+   ;; Company mode
+   `(company-tooltip ((,class (:background ,highlight1 :foreground ,color3))))
+   `(company-tooltip-selection ((,class (:background ,highlight2 :foreground ,color3))))
+   `(company-tooltip-common ((,class (:foreground ,warning))))
+   `(company-tooltip-common-selection ((,class (:foreground ,warning))))
+   `(company-scrollbar-bg ((,class (:background ,highlight0))))
+   `(company-scrollbar-fg ((,class (:background ,highlight2))))
+   `(company-preview ((,class (:background ,highlight2 :foreground ,color3))))
+   `(company-preview-common ((,class (:background ,highlight2 :foreground ,color3))))
+   `(company-preview-search ((,class (:background ,highlight2 :foreground ,color3))))
+
+   ;; Elixir
+   `(elixir-atom-face ((,class (:foreground ,color3 :background ,dark0))))
+   `(elixir-attribute-face ((,class (:foreground ,color2 :background ,dark0))))
    ))
 
-(provide-theme 'jc-theme)
+(provide-theme 'jc)

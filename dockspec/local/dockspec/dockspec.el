@@ -45,16 +45,19 @@
 (defcustom dockspec-container-name ""
   "The docker container to run specs in."
   :type 'string
+  :safe t
   :group 'dockspec)
 
-(defcustom dockspec-test-command "bundle exec spring rspec"
+(defcustom dockspec-test-command ""
   "The command used to run the tests. This will be run inside the docker container."
   :type 'string
+  :safe #'stringp
   :group 'dockspec)
 
 (defcustom dockspec-project-root nil
   "Base directory for the project. This is normally calculated but can be overridden by setting this explicitly."
   :type 'string
+  :safe t
   :group 'dockspec)
 
 (defcustom dockspec-key-command-prefix (kbd "C-c ,")
@@ -84,11 +87,11 @@
   "Finds the root directory of the project by walking the directory tree until it finds a rake file."
   (let ((directory (file-name-as-directory (or directory default-directory))))
     (cond ((dockspec--filesystem-root-p directory)
-	   (error "Could not determine the project root."))
-	  ((file-exists-p (expand-file-name "Rakefile" directory)) directory)
-	  ((file-exists-p (expand-file-name "Gemfile" directory)) directory)
-	  ((file-exists-p (expand-file-name ".git" directory)) directory)
-	  (t (dockspec--find-project-root (file-name-directory (directory-file-name directory)))))))
+     (error "Could not determine the project root."))
+    ((file-exists-p (expand-file-name "Rakefile" directory)) directory)
+    ((file-exists-p (expand-file-name "Gemfile" directory)) directory)
+    ((file-exists-p (expand-file-name ".git" directory)) directory)
+    (t (dockspec--find-project-root (file-name-directory (directory-file-name directory)))))))
 
 (defun dockspec--spec-path ()
   (file-relative-name buffer-file-name (dockspec--project-root)))
@@ -106,10 +109,10 @@
   (if (string= "" dockspec-container-name)
       (error "Set dockspec-container-name before trying to run tests")
     (format "%s %s %s %s"
-	    dockspec-docker-command
-	    dockspec-container-name
-	    dockspec-test-command
-	    path)))
+      dockspec-docker-command
+      dockspec-container-name
+      dockspec-test-command
+      path)))
 
 (defun dockspec-run-current-file ()
   (interactive)
